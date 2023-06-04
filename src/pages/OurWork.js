@@ -6,7 +6,7 @@ import athlete from '../img/athlete-small.png'
 import theracer from '../img/theracer-small.png'
 import goodtimes from '../img/goodtimes-small.png'
 /// Animation
-import {pageAnimation} from "../animation"
+import {pageAnimation,fade,photoAnim} from "../animation"
 import {motion} from 'framer-motion'
 
 
@@ -14,10 +14,10 @@ const OurWork =()=>{
     return(
         <Work style={{background: "#fff"}} exit='exit' variants={pageAnimation} initial='hidden' animate='show'>
             <Movie>
-                <h2>The Athlete</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>The Athlete</motion.h2>
+                <motion.div className="line"></motion.div>
                 <Link to='/work/the-athlete'>
-                    <img src={athlete} alt="athlete" />
+                    <motion.img variants={photoAnim} src={athlete} alt="athlete" />
                 </Link>
             </Movie>
             <Movie>
